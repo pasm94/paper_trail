@@ -11,5 +11,5 @@ defmodule PaperTrail.RepoClient do
   def timestamps_type, do: env(:timestamps_type, :utc_datetime)
   def origin_read_after_writes(), do: env(:origin_read_after_writes, true)
 
-  defp env(k, default), do: Application.get_env(:paper_trail, k, default)
+  defp env(k, default), do: Application.compile_env(:paper_trail, k, default)
 end
